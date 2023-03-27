@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Globalization;
+
+
+namespace WindowsFormsApp2
+{
+    public partial class UserControl1 : UserControl
+    {
+        public UserControl1()
+        {
+            InitializeComponent();
+
+        }
+        public static float gg = 1;
+        public static float x = 0;
+        public static float anlikucret ;
+        public void UserControl1_Click(object sender, EventArgs e)
+        {
+            anlikucret = float.Parse(fiyat.Text, CultureInfo.InvariantCulture.NumberFormat);
+            if (guna2GradientButton1_valid.Visible==false)
+            {
+                 guna2GradientButton1_valid.Visible=true;
+                 guna2Panel1_valid.Visible=true;
+                 x += (anlikucret * (int)adet.Value);
+
+
+                gg = (int)adet.Value;
+
+            }
+            else
+            {
+                guna2GradientButton1_valid.Visible = false;
+                guna2Panel1_valid.Visible = false;
+                x-= (anlikucret * (int)adet.Value);
+
+            }
+            if (x < 0)
+                x = 0;
+
+        }
+
+
+        private void guna2Panel1_valid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void guna2Panel1_valid_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void adet_ValueChanged(object sender, EventArgs e)
+        {
+            float jj = (anlikucret * ((int)adet.Value));
+            x -= anlikucret * gg;
+            x += anlikucret * (int)adet.Value;
+            gg=jj / anlikucret;
+
+
+
+        }
+    }
+}

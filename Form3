@@ -1,0 +1,162 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace WindowsFormsApp2
+{
+    public partial class Form3 : Form
+    {
+        SqlConnection baglanti = new SqlConnection(@"Data Source=MEVO;Initial Catalog=denemedatabase;Integrated Security=True");
+        SqlCommand komut;
+        SqlDataAdapter da;
+        public Form3()
+        {
+            InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Adı")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Adı";
+                textBox1.ForeColor = Color.Gray;
+
+
+            }
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "Soyadı")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Soyadı";
+                textBox2.ForeColor = Color.Gray;
+            }
+        }
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "Kullanıcı Adı")
+            {
+                textBox3.Text = "";
+                textBox3.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = "Kullanıcı Adı";
+                textBox3.ForeColor = Color.Gray;
+
+
+            }
+        }
+
+        private void textBox4_Enter(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "e-mail")
+            {
+                textBox4.Text = "";
+                textBox4.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox4_Leave(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "")
+            {
+                textBox4.Text = "e-mail";
+                textBox4.ForeColor = Color.Gray;
+            }
+        }
+        private void textBox5_Enter(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "Şifre")
+            {
+                textBox5.Text = "";
+                textBox5.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "Şifre";
+                textBox5.ForeColor = Color.Gray;
+
+
+            }
+        }
+
+        private void textBox6_Enter(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "Şifre")
+            {
+                textBox6.Text = "";
+                textBox6.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "")
+            {
+                textBox6.Text = "Şifre";
+                textBox6.ForeColor = Color.Gray;
+            }
+        }
+
+        private void uyeol_Click(object sender, EventArgs e)
+        {
+            string sorgu = "INSERT INTO denemetablo (username,pass,e_mail,Adı,Soyadı,repass) VALUES (@username,@pass,@e_mail,@adı,@soyadı,@repass)";
+            komut = new SqlCommand(sorgu, baglanti);
+            komut.Parameters.AddWithValue("@adı", textBox1.Text);
+            komut.Parameters.AddWithValue("@soyadı", textBox2.Text);
+            komut.Parameters.AddWithValue("@username", textBox3.Text);
+            komut.Parameters.AddWithValue("@e_mail", textBox4.Text);
+            komut.Parameters.AddWithValue("@pass", textBox5.Text);
+            komut.Parameters.AddWithValue("@repass", textBox6.Text);
+            baglanti.Open();
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+
+            MessageBox.Show("Üye Eklendi");
+
+            Form2 frm2 = new Form2();
+            frm2.ShowDialog();
+
+            this.Hide();
+        }
+    }
+}

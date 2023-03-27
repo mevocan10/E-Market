@@ -1,0 +1,1035 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Globalization;
+
+namespace WindowsFormsApp2
+{
+
+    public partial class Form1 : Form
+
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            guna2VScrollBar1.Value = atistirmalikPanel.VerticalScroll.Value;
+            guna2VScrollBar1.Minimum = atistirmalikPanel.VerticalScroll.Minimum;
+            guna2VScrollBar1.Maximum = atistirmalikPanel.VerticalScroll.Maximum;
+
+
+        }
+        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientTileButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            label2.Text =""+Form2.isim+" "+Form2.soyisim;
+
+
+
+        }
+
+        private void guna2GradientTileButton2_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientTileButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControl12_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControl31_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void guna2VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            atistirmalikPanel.VerticalScroll.Value = guna2VScrollBar1.Value;
+
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void temelgida_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = true;
+            atistirmalikPanel.Visible = false;
+        }
+        private void tadim_Load(object sender, EventArgs e)
+        {
+            tadim.fiyat.Text = "3.14";
+            tadim.urunadi.Text = "Tadım Yer Fıstıklı Bar";
+        }
+
+        private void luppo_Load(object sender, EventArgs e)
+        {
+            luppo.fiyat.Text = "15.98";
+            luppo.urunadi.Text = "Luppo Sandviç Kek";
+        }
+
+        private void ruffles_Load(object sender, EventArgs e)
+        {
+            ruffles.fiyat.Text = "12.90";
+            ruffles.urunadi.Text = "Ruffles Ketçaplı 120gr";
+        }
+
+        private void lays_Load(object sender, EventArgs e)
+        {
+            lays.fiyat.Text = "11.90";
+            lays.urunadi.Text = "Lays Klasik 113gr";
+        }
+
+        private void çizi_Load(object sender, EventArgs e)
+        {
+            çizi.fiyat.Text = "5.45";
+            çizi.urunadi.Text = "Çizi Peynirli";
+        }
+
+        private void dokuzkat_Load(object sender, EventArgs e)
+        {
+            dokuzkat.fiyat.Text = "6.25";
+            dokuzkat.urunadi.Text = "9 KATTAT Çilekli";
+        }
+
+        private void karam_Load(object sender, EventArgs e)
+        {
+            karam.fiyat.Text = "5.00";
+            karam.urunadi.Text = "Eti Karam Gurme";
+        }
+
+        private void ulkercikolata_Load(object sender, EventArgs e)
+        {
+            ulkercikolata.fiyat.Text = "2.75";
+            ulkercikolata.urunadi.Text = "Ülker Çikolatalı Gofret";
+        }
+
+        private void rulokat_Load(object sender, EventArgs e)
+        {
+            rulokat.fiyat.Text = "16.50";
+            rulokat.urunadi.Text = "Fındıklı Kutu Rulokat";
+        }
+
+        private void cekirdek_Load(object sender, EventArgs e)
+        {
+            cekirdek.fiyat.Text = "10.00";
+            cekirdek.urunadi.Text = "Tadım Ay Çekirdeği";
+        }
+
+        private void popkek_Load(object sender, EventArgs e)
+        {
+            popkek.fiyat.Text = "12.30";
+            popkek.urunadi.Text = "Popkek";
+        }
+
+        private void pringles_Load(object sender, EventArgs e)
+        {
+            pringles.fiyat.Text = "23.65";
+            pringles.urunadi.Text = "Pringles 165gr";
+        }
+
+        private void kraker_Load(object sender, EventArgs e)
+        {
+            kraker.fiyat.Text = "1.90";
+            kraker.urunadi.Text = "Ülker Sade Kraker";
+        }
+
+        private void dido_Load(object sender, EventArgs e)
+        {
+            dido.fiyat.Text = "6.00";
+            dido.urunadi.Text = "Dido Kare";
+        }
+
+        private void doritos_Load(object sender, EventArgs e)
+        {
+            doritos.fiyat.Text = "13.00";
+            doritos.urunadi.Text = "Doritos Baharatlı";
+        }
+
+        private void bulgur_Load(object sender, EventArgs e)
+        {
+            bulgur.fiyat.Text = "25.45";
+            bulgur.urunadi.Text = "Reis Bulgur 1 Kg";
+        }
+
+        private void seker_Load(object sender, EventArgs e)
+        {
+            seker.fiyat.Text = "13.00";
+            seker.urunadi.Text = "Doğuş Toz Şeker 1 Kg";
+        }
+
+        private void nohut_Load(object sender, EventArgs e)
+        {
+            nohut.fiyat.Text = "26.40";
+            nohut.urunadi.Text = "Koçbasşı Nohut 2 Kg";
+        }
+
+        private void makarna_Load(object sender, EventArgs e)
+        {
+            makarna.fiyat.Text = "6.00";
+            makarna.urunadi.Text = "Nuh'un Ankara Makarna 500gr";
+        }
+
+        private void fasulye_Load(object sender, EventArgs e)
+        {
+            fasulye.fiyat.Text = "15.45";
+            fasulye.urunadi.Text = "Yayla Fasulye 1 Kg";
+        }
+
+        private void mericmek_Load(object sender, EventArgs e)
+        {
+            mericmek.fiyat.Text = "13.00";
+            mericmek.urunadi.Text = "Kırmızı Mercimek 1 Kg";
+        }
+
+        private void pirinc_Load(object sender, EventArgs e)
+        {
+            pirinc.fiyat.Text = "17.80";
+            pirinc.urunadi.Text = "Yayla Pilavlık Pirinç 2 Kg";
+        }
+
+        private void un_Load(object sender, EventArgs e)
+        {
+            un.fiyat.Text = "11.90";
+            un.urunadi.Text = "Söke Un 1 Kg";
+        }
+
+        private void yag_Load(object sender, EventArgs e)
+        {
+            yag.fiyat.Text = "46.99";
+            yag.urunadi.Text = "Komili Yağ 1lt";
+        }
+
+        private void atıstırmalık_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = true;
+        }
+
+        private void su1_Load(object sender, EventArgs e)
+        {
+            su1.fiyat.Text = "2.25";
+            su1.urunadi.Text = "Erikli Su 0.5 ml";
+
+
+        }
+
+        private void su2_Load(object sender, EventArgs e)
+        {
+            su2.fiyat.Text = "3.75";
+            su2.urunadi.Text = "Erikli Su 1.5 ml";
+        }
+
+        private void su3_Load(object sender, EventArgs e)
+        {
+            su3.fiyat.Text = "6.00";
+            su3.urunadi.Text = "Erikli Su 5 lt";
+        }
+
+        private void kızılay_Load(object sender, EventArgs e)
+        {
+            kızılay.fiyat.Text = "12.25";
+            kızılay.urunadi.Text = "Kızılay 6'lı Sade Soda";
+        }
+
+        private void ananas_Load(object sender, EventArgs e)
+        {
+            ananas.fiyat.Text = "7.90";
+            ananas.urunadi.Text = "Sek Ananas Aromalı Meyve Suyu";
+        }
+
+        private void ayran_Load(object sender, EventArgs e)
+        {
+            ayran.fiyat.Text = "7.75";
+            ayran.urunadi.Text ="Sütaş Ayran 1 lt";
+        }
+
+        private void schwepps_Load(object sender, EventArgs e)
+        {
+            schwepps.fiyat.Text = "16.75";
+            schwepps.urunadi.Text = "Schwepps 6'lı Mandalina Aromalı İçecek";
+        }
+
+        private void pepsi_Load(object sender, EventArgs e)
+        {
+            pepsi.fiyat.Text = "9.25";
+            pepsi.urunadi.Text = "Pepsi 1 lt";
+        }
+
+        private void maltana_Load(object sender, EventArgs e)
+        {
+            maltana.fiyat.Text = "9.00";
+            maltana.urunadi.Text = "Maltana 250 ml ";
+        }
+
+        private void nigdegazozu_Load(object sender, EventArgs e)
+        {
+            nigdegazozu.fiyat.Text = "18.80";
+            nigdegazozu.urunadi.Text = "Niğde Gazozu 6'lı";
+        }
+
+        private void cola_Load(object sender, EventArgs e)
+        {
+            cola.fiyat.Text = "8.75";
+            cola.urunadi.Text = "Coca Cola 1 lt";
+        }
+
+        private void fanta_Load(object sender, EventArgs e)
+        {
+            fanta.fiyat.Text = "7.75";
+            fanta.urunadi.Text = "Fanta 1 lt";
+        }
+
+        private void sprite_Load(object sender, EventArgs e)
+        {
+            sprite.fiyat.Text = "8.00";
+            sprite.urunadi.Text = "Sprite 1 lt";
+        }
+
+        private void cappy_Load(object sender, EventArgs e)
+        {
+            cappy.fiyat.Text = "11.90";
+            cappy.urunadi.Text = "Cappy Pulpy Portakal Aaromalı İçecek";
+        }
+
+        private void fusetea_Load(object sender, EventArgs e)
+        {
+            fusetea.fiyat.Text = "8.90";
+            fusetea.urunadi.Text = "FuseTea limon Aromalı Soğuk Çay";
+        }
+
+        private void icecekler_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = true;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void mandila_Load(object sender, EventArgs e)
+        {
+            mandila.fiyat.Text = "10.00";
+            mandila.urunadi.Text = "Mandalina 1 Kg";
+        }
+
+        private void domates_Load(object sender, EventArgs e)
+        {
+            domates.fiyat.Text = "15.00";
+            domates.urunadi.Text = "Domates 1 Kg";
+        }
+
+        private void pattis_Load(object sender, EventArgs e)
+        {
+            pattis .fiyat.Text = "4.00";
+            pattis.urunadi.Text = "Patates 1 Kg";
+        }
+
+        private void salatalık_Load(object sender, EventArgs e)
+        {
+            salatalık.fiyat.Text = "17.00";
+            salatalık.urunadi.Text = "Salatalık 1 Kg";
+        }
+
+        private void muz_Load(object sender, EventArgs e)
+        {
+            muz.fiyat.Text = "16.00";
+            muz.urunadi.Text = "Muz 1 Kg";
+        }
+
+        private void ananass_Load(object sender, EventArgs e)
+        {
+            ananass.fiyat.Text = "25.00";
+            ananass.urunadi.Text = "Ananas Adet";
+        }
+
+        private void yesilelma_Load(object sender, EventArgs e)
+        {
+            yesilelma.fiyat.Text = "7.00";
+            yesilelma.urunadi.Text = "Yeşil Elma 1 Kg";
+        }
+
+        private void kırmızıelma_Load(object sender, EventArgs e)
+        {
+            kırmızıelma.fiyat.Text = "9.00";
+            kırmızıelma.urunadi.Text = "Kırmızı Elma 1 Kg";
+        }
+
+        private void sogan_Load(object sender, EventArgs e)
+        {
+            sogan.fiyat.Text = "2.50";
+            sogan.urunadi.Text = "Soğan 1 Kg";
+        }
+
+        private void avokado_Load(object sender, EventArgs e)
+        {
+            avokado.fiyat.Text = "13.00";
+            avokado.urunadi.Text = "Avokado 1 Kg";
+        }
+
+        private void meyvesebze_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = true;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void kruvasan_Load(object sender, EventArgs e)
+        {
+            kruvasan.fiyat.Text = "22.50";
+            kruvasan.urunadi.Text = "UNO Kruvasan 10 Adet 300 gr";
+        }
+
+        private void ekmek_Load(object sender, EventArgs e)
+        {
+            ekmek.fiyat.Text = "3.00";
+            ekmek.urunadi.Text = "Ekmek Tekli";
+        }
+
+        private void simit_Load(object sender, EventArgs e)
+        {
+            simit.fiyat.Text = "3.25";
+            simit.urunadi.Text = "Simit Adet";
+        }
+
+        private void pogaca_Load(object sender, EventArgs e)
+        {
+            pogaca.fiyat.Text = "3.25";
+            pogaca.urunadi.Text = "Peynirli Poğaça Adet";
+        }
+
+        private void galeta_Load(object sender, EventArgs e)
+        {
+            galeta.fiyat.Text = "7.75";
+            galeta.urunadi.Text = "Galeta Ekmeği 200 gr";
+        }
+
+        private void unlumamuller_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = true;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        public void krem_Load(object sender, EventArgs e)
+        {
+            krem.fiyat.Text = "21.90";
+            krem.urunadi.Text = "Neutrogena El Kremi";
+        }
+
+        public void elsabun_Load(object sender, EventArgs e)
+        {
+            elsabun.fiyat.Text = "12.30";
+            elsabun.urunadi.Text = "Hobby Sıvı El Sabunu Bahar Çiçeği";
+        }
+
+        public void haci_Load(object sender, EventArgs e)
+        {
+            haci.fiyat.Text = "20.00";
+            haci.urunadi.Text = "Hacı Şakir Doğal Saf Sabun";
+            
+        }
+
+        public void colgate_Load(object sender, EventArgs e)
+        {
+            colgate.fiyat.Text = "17.00";
+            colgate.urunadi.Text = "Colgate Diş Macunu Max White";
+        }
+
+        public void islak_Load(object sender, EventArgs e)
+        {      
+            islak.fiyat.Text = "9.00";
+            islak.urunadi.Text = "Activex 3'lü Islak MendilCep Boy ";
+        }
+
+        public void deodo_Load(object sender, EventArgs e)
+        {
+            deodo.fiyat.Text = "22.00";
+            deodo.urunadi.Text = "Garnier Men Deodorant";
+        }
+
+        public void sampuan_Load(object sender, EventArgs e)
+        {
+            sampuan.fiyat.Text = "24.90";
+            sampuan.urunadi.Text = "Schwarzkopf GLİSS Şampuan";
+        }
+
+        public void maske_Load(object sender, EventArgs e)
+        {
+            maske.fiyat.Text = "25.00";
+            maske.urunadi.Text = "Evony 50'li Maske 3 Katlı";
+        }
+
+        public void head_Load(object sender, EventArgs e)
+        {
+            head.fiyat.Text = "26.45";
+            head.urunadi.Text = "Head&Shoulders Şampuan Klasik Bakım";
+        }
+
+        public void signal_Load(object sender, EventArgs e)
+        {
+            signal.fiyat.Text = "17.00";
+            signal.urunadi.Text = "Signal White Now Diş Macunu";
+
+        }
+
+        private void hijyen_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = true;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void odenecektutar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Load(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            odenecektutarr.Visible = true;
+            odenecektutarr.Text = "Sepetiniz Boş";
+            UserControl1.x = 0;
+
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void odenecektutarr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            odenecektutarr.Visible =true;
+            odenecektutarr.Text = "" + UserControl1.x + " ₺";
+        }
+
+        private void powerade_Load(object sender, EventArgs e)
+        {
+            powerade.fiyat.Text = "7.50";
+            powerade.urunadi.Text = "Powerade 500 ml";
+        }
+
+        private void redbul_Load(object sender, EventArgs e)
+        {
+            redbul.fiyat.Text = "16.20";
+            redbul.urunadi.Text = "Red Bull 250 ml";
+        }
+
+        private void colateneke_Load(object sender, EventArgs e)
+        {
+            colateneke.fiyat.Text = "9.00";
+            colateneke.urunadi.Text = "Coca Cola 250 ml";
+        }
+
+        private void probis_Load(object sender, EventArgs e)
+        {
+            probis.fiyat.Text = "6.00";
+            probis.urunadi.Text = "Ülker Probis";
+        }
+
+        private void oreo_Load(object sender, EventArgs e)
+        {
+            oreo.fiyat.Text = "7.00";
+            oreo.urunadi.Text = "Oreo";
+        }
+
+        private void negro_Load(object sender, EventArgs e)
+        {
+            negro.fiyat.Text = "5.45";
+            negro.urunadi.Text = "Eti Negro";
+        }
+
+        private void tutku_Load(object sender, EventArgs e)
+        {
+            tutku.fiyat.Text = "6.75";
+            tutku.urunadi.Text = "Eti Tutku";
+        }
+
+        private void benimo_Load(object sender, EventArgs e)
+        {
+            benimo.fiyat.Text = "4.90";
+            benimo.urunadi.Text = "Eti Benimo";
+        }
+
+        private void browni_Load(object sender, EventArgs e)
+        {
+            oreo.fiyat.Text = "3.60";
+            oreo.urunadi.Text = "Eti Browni";
+        }
+
+        private void tuz_Load(object sender, EventArgs e)
+        {
+            tuz.fiyat.Text = "8.30";
+            tuz.urunadi.Text = "Billur İyotlu Sofra Tuzu";
+        }
+
+        private void yayla_Load(object sender, EventArgs e)
+        {
+            yayla.fiyat.Text = "7.45";
+            yayla.urunadi.Text = "Knorr Yayla Çorbası";
+        }
+
+        private void ezo_Load(object sender, EventArgs e)
+        {
+            ezo.fiyat.Text = "7.45";
+            ezo.urunadi.Text = "Knorr Ezogelin Çorbası";
+        }
+
+        private void sehriiyeli_Load(object sender, EventArgs e)
+        {
+            sehriiyeli.fiyat.Text = "7.45";
+            sehriiyeli.urunadi.Text = "Knorr Şehriyeli Tavuk Çorbası";
+        }
+
+        private void biber_Load(object sender, EventArgs e)
+        {
+            biber.fiyat.Text = "6.90";
+            yayla.urunadi.Text = "Yeşil Sivri Biber 1 Kg";
+        }
+
+        private void patlican_Load(object sender, EventArgs e)
+        {
+            patlican.fiyat.Text = "17.95";
+            patlican.urunadi.Text = "Patlıcan 1 Kg";
+        }
+
+        private void milliyet_Load(object sender, EventArgs e)
+        {
+            milliyet.fiyat.Text = "3.00";
+            milliyet.urunadi.Text = "Milliyet Fazetesi";
+        }
+
+        private void cumhuriyet_Load(object sender, EventArgs e)
+        {
+            cumhuriyet.fiyat.Text = "3.00";
+            cumhuriyet.urunadi.Text = "Cumhuriyet Gazetesi";
+        }
+
+        private void posta_Load(object sender, EventArgs e)
+        {
+            posta.fiyat.Text = "3.00";
+            posta.urunadi.Text = "Posta Gazetesi";
+        }
+
+        private void hrryet_Load(object sender, EventArgs e)
+        {
+            hrryet.fiyat.Text = "3.00";
+            hrryet.urunadi.Text = "Hürriyet Gazetesi";
+        }
+
+        private void fanatik_Load(object sender, EventArgs e)
+        {
+            fanatik.fiyat.Text = "3.00";
+            fanatik.urunadi.Text = "Fanatik Gazetesi";
+        }
+
+        private void sozcu_Load(object sender, EventArgs e)
+        {
+            sozcu.fiyat.Text = "3.00";
+            sozcu.urunadi.Text = "Sözcü Gazetesi";
+        }
+
+        private void masa_Load(object sender, EventArgs e)
+        {
+            masa.fiyat.Text = "7.00";
+            masa.urunadi.Text = "MASA Dergisi";
+        }
+
+        private void uykusuz_Load(object sender, EventArgs e)
+        {
+            uykusuz.fiyat.Text = "8.00";
+            uykusuz.urunadi.Text = "UYKUSUZ Dergisi";
+        }
+
+        private void otohaber_Load(object sender, EventArgs e)
+        {
+            otohaber.fiyat.Text = "17.00";
+            otohaber.urunadi.Text = "OtoHaber Dergisi";
+        }
+
+        private void kafa_Load(object sender, EventArgs e)
+        {
+            kafa.fiyat.Text = "15.00";
+            kafa.urunadi.Text = "KAFA Dergisi";
+        }
+
+        private void bavul_Load(object sender, EventArgs e)
+        {
+            bavul.fiyat.Text = "20.00";
+            bavul.urunadi.Text = "BAVUL Dergisi";
+        }
+
+        private void ot_Load(object sender, EventArgs e)
+        {
+            ot.fiyat.Text = "25.00";
+            ot.urunadi.Text = "OT Dergisi";
+        }
+
+        private void guna2GradientTileButton3_Click(object sender, EventArgs e)
+        {
+            gazetedergiPanel.Visible = true;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+            evurunleriPanel.Visible =false;
+            evcilhayvanPanel.Visible = false;
+        }
+
+        private void pembe_Load(object sender, EventArgs e)
+        {
+            pembe.fiyat.Text = "27.90";
+            pembe.urunadi.Text = "Whiskas Biftekli Kedi Maması 300 gr";
+        }
+
+        private void sari_Load(object sender, EventArgs e)
+        {
+            sari.fiyat.Text = "159.90";
+            sari.urunadi.Text = "Pedigree Sığırlı & Kümes Hayvanlı Yetişkin Köpek Maması";
+        }
+
+        private void sarikutu_Load(object sender, EventArgs e)
+        {
+            sarikutu.fiyat.Text = "27.90";
+            sarikutu.urunadi.Text = "Pedigree Konserve Sığır Etli Yetişkin Köpek Maması";
+        }
+
+        private void sarikedi_Load(object sender, EventArgs e)
+        {
+            sarikedi.fiyat.Text = "32.90";
+            sarikedi.urunadi.Text = "Gimcat Kedi Ödül Çubuğu Hindili";
+        }
+
+        private void mavi_Load(object sender, EventArgs e)
+        {
+            mavi.fiyat.Text = "91.75";
+            mavi.urunadi.Text = "Purina One Kısırlaştırılmış Kedi Maması Sığır Etli 800 gr";
+        }
+
+        private void maviuzun_Load(object sender, EventArgs e)
+        {
+            maviuzun.fiyat.Text = "43.50";
+            maviuzun.urunadi.Text = "Smarter Tüy Toplayıcı Yedek Rulo 4*30'lu";
+        }
+
+        private void acıkmavi_Load(object sender, EventArgs e)
+        {
+            acıkmavi.fiyat.Text = "55.90";
+            acıkmavi.urunadi.Text="Trendline Kristal Kedi Kumu";
+        }
+
+        private void guna2GradientTileButton2_Click_1(object sender, EventArgs e)
+        {
+            evcilhayvanPanel.Visible = true;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+        }
+
+        private void surahı_Load(object sender, EventArgs e)
+        {
+            surahı.fiyat.Text = "199.90";
+            surahı.urunadi.Text = "Brita Marella XL Filtreli Akıllı Sürahi Mavi";
+        }
+
+        private void kase_Load(object sender, EventArgs e)
+        {
+            kase.fiyat.Text = "74.90";
+            kase.urunadi.Text = "LAV Karen Orta Boy Kase 6'lı";
+        }
+
+        private void bardak_Load(object sender, EventArgs e)
+        {
+            bardak.fiyat.Text = "66.50";
+            bardak.urunadi.Text = "LAV Ajda Çay Bardağı 6'lı";
+        }
+
+        private void pompa_Load(object sender, EventArgs e)
+        {
+            pompa.fiyat.Text = "29.90";
+            pompa.urunadi.Text = "Damacana Su Pompası - Yeşil";
+        }
+
+        private void cakmak_Load(object sender, EventArgs e)
+        {
+            cakmak.fiyat.Text = "69.90";
+            cakmak.urunadi.Text = "Cricket Firepower Çakmak";
+        }
+
+        private void kasik_Load(object sender, EventArgs e)
+        {
+            kasik.fiyat.Text = "51.95";
+            kasik.urunadi.Text = "Metaltex Dondurma Kaşığı";
+        }
+
+
+
+        private void ampul_Load(object sender, EventArgs e)
+        {
+            ampul.fiyat.Text = "19.00";
+            ampul.urunadi.Text = "OSRAM Ampul";
+        }
+
+        private void adaptor_Load(object sender, EventArgs e)
+        {
+            adaptor.fiyat.Text = "309.90";
+            adaptor.urunadi.Text = "Apple Adaptör";
+        }
+
+        private void applekablo_Load(object sender, EventArgs e)
+        {
+            applekablo.fiyat.Text = "300.00";
+            applekablo.urunadi.Text = "Apple Kablo";
+        }
+
+        private void cablo_Load(object sender, EventArgs e)
+        {
+            cablo.fiyat.Text = "54.90";
+            cablo.urunadi.Text = "ttec Kablo";
+        }
+
+        private void priz_Load(object sender, EventArgs e)
+        {
+            priz.fiyat.Text = "74.90";
+            priz.urunadi.Text = "3'lü Priz";
+        }
+
+        private void kalin_Load(object sender, EventArgs e)
+        {
+            kalin.fiyat.Text = "24.00";
+            kalin.urunadi.Text = "Duracell Kalın Pil";
+        }
+
+        private void ince_Load(object sender, EventArgs e)
+        {
+            ince.fiyat.Text = "22.00";
+            ince.urunadi.Text = "Duracell İnce Pil";
+        }
+
+        private void elektronik_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = true;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void evurunleri_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = true;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void evcilhayvan_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = true;
+            gazetedergiPanel.Visible = false;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void gazetedergi_Click(object sender, EventArgs e)
+        {
+            elektronikPanel.Visible = false;
+            evurunleriPanel.Visible = false;
+            evcilhayvanPanel.Visible = false;
+            gazetedergiPanel.Visible = true;
+            hijyenurunlerıPanel.Visible = false;
+            unlumamullerPanel.Visible = false;
+            meyvesebzePanel.Visible = false;
+            iceceklerPanel.Visible = false;
+            temelgidapanel.Visible = false;
+            atistirmalikPanel.Visible = false;
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+            
+        {
+            if(odenecektutarr.Text=="Sepetiniz Boş")
+                MessageBox.Show("Lütfen sepetinize bir kaç şey ekleyin.", "Program");
+            else
+            {
+                if (UserControl1.x >= 1)
+                    MessageBox.Show("Siparişiniz başarıyla oluşturuldu.Toplam tutar : "+UserControl1.x, "Program");
+                else
+                    MessageBox.Show("Lütfen sepetinize bir kaç şey ekleyin.", "Program");
+            }
+        }
+
+
+    }
+}
